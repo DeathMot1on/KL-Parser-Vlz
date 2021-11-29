@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+  <!-- CSS Reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+  <!-- Milligram CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+  <title>volzsky Parser</title>
+</head>
+<body>
+  <div class="row">
+
+    <div class="column column-25">
+      <h3>Categories</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Название</th>
+            <th>Индекс</th>
+            <th>Путь</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in categories %}
+          <tr>
+            <td>{{ c["title"] }}</td>
+            <td>{{ c["index"] }}</td>
+            <td>{{ c["path"] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="column column-75">
+      <h3>Articles</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Название</th>
+            <th>Категория</th>
+            <th>Дата</th>
+            <th>Ссылка</th>
+            <th>Текст</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for a in articles %}
+          <tr>
+            <td>{{ a["title"] }}</td>
+            <td>{{ a["category"] }}</td>
+            <td>{{ a["date"] }}</td>
+            <td>{{ a["link"] }}</td>
+            <td>{{ a["text"] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>
